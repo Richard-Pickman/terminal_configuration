@@ -8,7 +8,7 @@ if [[ -f ~/bin/nvim/bin/nvim ]]; then
 elif [[ -f /opt/homebrew/bin/nvim ]]; then
   alias vi=/opt/homebrew/bin/nvim
 elif [[ -f /usr/bin/vim ]]; then
-  alias vi="/usr/bin/vim"
+  alias vi=/usr/bin/vim
 fi
 
 alias c=clear
