@@ -3,12 +3,12 @@
 
 PATH=$PATH:~/bin
 
-if [[ -f ~/bin/nvim/bin/nvim ]]; then
-  alias vi=~/bin/nvim/bin/nvim
+if [[ -f /usr/local/bin/nvim-linux-x86_64/bin/nvim ]]; then
+  alias vi=/usr/local/bin/nvim-linux-x86_64/bin/nvim
+elif [[ -f /usr/local/bin/nvim-linux-x86_64/bin/nvim ]]; then
+  alias vi=/usr/local/bin/nvim-linux-arm64/bin/nvim
 elif [[ -f /opt/homebrew/bin/nvim ]]; then
   alias vi=/opt/homebrew/bin/nvim
-elif [[ -f /usr/bin/vim ]]; then
-  alias vi=/usr/bin/vim
 fi
 
 alias c=clear
@@ -18,10 +18,6 @@ alias ls='ls --color=auto'
 alias b='cd ..;pwd'
 alias type='type -a'
 alias code='code --disable-gpu'
-
-if [[ -f ~/bin/calendar.py ]]; then
-  ~/bin/calendar.py
-fi
 
 # Use vi navigation with bash.
 set -o vi
@@ -36,6 +32,8 @@ export CODEX_CONFIG_PATH="$HOME/.codex/config.toml"
 
 export HISTCONTROL=ignoredups
 
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+if [[ -f ~/bin/calendar.py ]]; then
+  ~/bin/calendar.py
+fi
 
 ~/motd.bash
